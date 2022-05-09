@@ -17,7 +17,10 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->word,
+            'content' => $this->faker->paragraph,
+            'active' => $this->faker->numberBetween($min = 0, $max = 1),
+            'created_at' => now()
         ];
     }
 }
