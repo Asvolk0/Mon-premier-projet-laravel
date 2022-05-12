@@ -2,21 +2,21 @@
 
 namespace App\Models;
 
-use App\Models\Comment;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Article extends Model
+class Comment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
         'content',
+        'article_id',
         'active'
     ];
 
-    public function comments(){
-        return $this->hasMany(Comment::class);
+    public function article(){
+        return $this->belongsTo(Article::class);
     }
 }

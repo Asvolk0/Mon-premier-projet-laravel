@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\articleController;
+use App\Http\Controllers\commentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/articles/modifier/{id}', [articleController::class, 'updateArticle'
 Route::post('/articles/modifier/{id}', [articleController::class, 'articleUpdate'])->name('articleUpdate');
 
 Route::get('/articles/supprimer/{id}', [articleController::class, 'deleteArticle'])->name('deleteArticle');
+
+Route::get('/articles/{id}/commentaire/ajouter', [commentController::class, 'createComment'])->name('createComment');
+Route::post('/articles/{id}/commentaire/ajouter', [commentController::class, 'commentCreate'])->name('commentCreate');
 
 Route::get('/articles/{id}', [articleController::class, 'showOneArticle'])->name('showOneArticle');
 
