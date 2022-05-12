@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\articleController;
 use App\Http\Controllers\commentController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +35,13 @@ Route::get('/articles/{id}', [articleController::class, 'showOneArticle'])->name
 //         return "salut $name" . route('userName', ['name' => $name]);
 //     }]);
 // });
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

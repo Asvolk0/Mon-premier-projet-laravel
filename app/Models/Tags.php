@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use App\Model\Article;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Tags extends Model
 {
     use HasFactory;
 
-    public function article(){
-        return $this->belongsTo(Article::class);
+    public function articles(){
+        return $this->belongsToMany(Article::class);
     }
+
 }
