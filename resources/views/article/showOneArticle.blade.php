@@ -20,5 +20,17 @@
     <a href="{{ route('showArticle') }}">Retour</a>
     <a href="{{ route('articleUpdate', $article->id) }}">Modifier</a>
     <a href="{{ route('deleteArticle', $article->id) }}">Supprimer</a>
+    <a href="{{ route('createComment', $article->id) }}">Ajouter un commentaire</a>
+       
+    
+    @forelse ($article->comments as $comment)
+        <p>
+            {{ $comment->content }}
+        </p>
+    @empty
+        <p>
+            Aucun commentaire
+        </p>
+    @endforelse
 </body>
 </html>
