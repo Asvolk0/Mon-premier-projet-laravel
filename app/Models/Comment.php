@@ -12,7 +12,12 @@ class Comment extends Model
 
     protected $fillable = [
         'content',
+<<<<<<< HEAD
         'article_id'
+=======
+        'article_id',
+        'active'
+>>>>>>> acfe662710a77344550712eeb4b5916dcad7d104
     ];
 
     public function article(){

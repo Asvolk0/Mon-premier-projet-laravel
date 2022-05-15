@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-=======
-            $table->string('path')->default('default.png');
-            $table->foreignId('article_id')->constrained()->onDelete('cascade');
->>>>>>> acfe662710a77344550712eeb4b5916dcad7d104
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('tags');
     }
 };
