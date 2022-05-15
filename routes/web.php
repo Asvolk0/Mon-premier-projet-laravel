@@ -2,10 +2,7 @@
 
 use App\Http\Controllers\articleController;
 use App\Http\Controllers\commentController;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Route;
->>>>>>> acfe662710a77344550712eeb4b5916dcad7d104
 
 /*
 |--------------------------------------------------------------------------
